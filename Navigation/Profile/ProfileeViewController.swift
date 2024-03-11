@@ -20,9 +20,21 @@ class ProfileeViewController: UIViewController {
         
         view.backgroundColor = .lightGray
         title = "Profile"
-        
+        buttonPress()
         setupLayout()
     }
+    
+    func buttonPress() {
+        let myButton = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 70))
+        myButton.setTitle("Button", for: .normal)
+        myButton.backgroundColor = .blue
+        myButton.center = view.center
+        myButton.layer.cornerRadius = 12
+        myButton.layer.masksToBounds = true
+        myButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+    }
+    @objc func buttonAction(){}
     
     func setupLayout() {
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
