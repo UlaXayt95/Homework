@@ -29,17 +29,10 @@ class FeedViewController: UIViewController {
         
     }
     @objc func buttonAction(_ sender: UIButton) {
-        /*let postViewController = UINavigationController(rootViewController: PostViewController())
-        postViewController.modalTransitionStyle = .coverVertical
-        postViewController.modalPresentationStyle = .fullScreen
-        
-        present(postViewController, animated: true)*/
         let postViewController = PostViewController()
         navigationController?.pushViewController(postViewController, animated: true)
         
         }
-    
-        
     struct Post {
         var title: String
     }

@@ -19,10 +19,6 @@ class PostViewController: UIViewController {
     @objc private func didTapButton() {
         
         let infoViewController = InfoViewController()
-        /*infoViewController.title = "View2"
-        infoViewController.view.backgroundColor = .systemMint
-        
-        infoViewController.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Info", style: .done, target: self, action: nil)*/
         navigationController?.pushViewController(infoViewController, animated: true)
         
     }
