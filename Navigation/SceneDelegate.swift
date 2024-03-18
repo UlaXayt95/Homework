@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         feedViewController.title = "Лента"
         feedViewController.view.backgroundColor = .systemCyan
         
-        let profileViewController = UINavigationController(rootViewController: ProfileeViewController())
+        let profileViewController = UINavigationController(rootViewController: LogInViewController())
         profileViewController.title = "Профиль"
         profileViewController.view.backgroundColor = .white
         

@@ -20,29 +20,35 @@ class ProfileeViewController: UIViewController {
         
         view.backgroundColor = .lightGray
         title = "Profile"
-        buttonPress()
+        
         setupLayout()
     }
     
-    func buttonPress() {
-        let myButton = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 70))
+    let buttonPress: UIButton = {
+        let myButton = UIButton(frame: CGRect(x: 150, y: 340, width: 100, height: 50))
         myButton.setTitle("Button", for: .normal)
         myButton.backgroundColor = .blue
-        myButton.center = view.center
         myButton.layer.cornerRadius = 12
         myButton.layer.masksToBounds = true
-        myButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
-    }
+        myButton.addTarget(ProfileeViewController.self, action: #selector(buttonAction), for: .touchUpInside)
+        return myButton
+    }()
     @objc func buttonAction(){}
     
     func setupLayout() {
+        let saveAreaGuide = view.safeAreaLayoutGuide
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(profileHeaderView)
+        profileHeaderView.addSubview(buttonPress)
         NSLayoutConstraint.activate([
             profileHeaderView.topAnchor.constraint(equalTo: view.topAnchor),
             profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            buttonPress.topAnchor.constraint(equalTo: view.topAnchor),
+            buttonPress.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            buttonPress.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            buttonPress.bottomAnchor.constraint(equalTo: saveAreaGuide.bottomAnchor)
         ])
     }
 

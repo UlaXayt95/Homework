@@ -14,20 +14,42 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        myButton()
+        view.addSubview(stackView)
+        setupConstrait()
     }
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.clipsToBounds = true
+        stackView.axis = .vertical
+        stackView.spacing = 10.0
+        stackView.addArrangedSubview(self.myButton)
+        stackView.addArrangedSubview(self.myButtonSecond)
+        return stackView
+    }()
+    
    
-    func myButton(){
-        let button = UIButton(frame: CGRect(x: 100, y: 50, width: 160, height: 50))
-        view.addSubview(button)
+   
+    let myButton: UIButton = {
+        let button = UIButton()
         button.setTitle("FirstButton", for: .normal)
         button.backgroundColor = .orange
-        button.center = view.center
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
-    }
+        button.addTarget(FeedViewController.self, action: #selector(buttonAction), for: .touchUpInside)
+        return button
+    }()
+    
+    let myButtonSecond: UIButton = {
+        let button = UIButton()
+        button.setTitle("SecondButton", for: .normal)
+        button.backgroundColor = .blue
+        button.layer.cornerRadius = 12
+        button.layer.masksToBounds = true
+        button.addTarget(FeedViewController.self, action: #selector(buttonAction), for: .touchUpInside)
+        return button
+    }()
     @objc func buttonAction(_ sender: UIButton) {
         let postViewController = PostViewController()
         navigationController?.pushViewController(postViewController, animated: true)
@@ -35,6 +57,17 @@ class FeedViewController: UIViewController {
         }
     struct Post {
         var title: String
+    }
+    
+    func setupConstrait(){
+        let saveAreaGuide = view.safeAreaLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: saveAreaGuide.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: saveAreaGuide.centerYAnchor)
+            ])
+        
+        
     }
     
 
