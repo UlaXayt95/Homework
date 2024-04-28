@@ -7,51 +7,93 @@
 import Foundation
 import UIKit
 
-class ProfileeViewController: UIViewController {
+struct Post {
+    var author: String
+    var description: String
+    var image: String
+    var likes: Int
+    var views: Int
+}
+
+
+
+class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
+  
+    
     let profileHeaderView = ProfileHeaderView()
     let appearance = UINavigationBarAppearance()
+    private var dataSource: [Post] = [
+        Post(author: "Superman", description: "Man of Steel", image: "superman", likes: 4556, views: 8855),
+        Post(author: "Naruto", description: "Hokage", image: "naruto", likes: 6473, views: 8696),
+        Post(author: "Kurasaki Ichigo", description: "Shinigami", image:"Ichigo", likes: 8696, views: 9000),
+        Post(author: "Monkey D. Luffy", description: "The Sun God", image:"luffy", likes: 6575, views: 7654)
+    ]
     
+    let tableView: UITableView = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appearance.backgroundColor = .white
+        //appearance.backgroundColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
-        view.backgroundColor = .lightGray
+        //view.backgroundColor = .white
         title = "Profile"
         
-        setupLayout()
+        #if DEBUG
+        self.view.backgroundColor = .white
+        #else
+        self.view.backgroundColor = .systemCyan
+        #endif
+        
+     
+        setupUI()
+        setupTableView()
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostTableViewCell")
     }
     
-    let buttonPress: UIButton = {
-        let myButton = UIButton(frame: CGRect(x: 150, y: 340, width: 100, height: 50))
-        myButton.setTitle("Button", for: .normal)
-        myButton.backgroundColor = .blue
-        myButton.layer.cornerRadius = 12
-        myButton.layer.masksToBounds = true
-        myButton.addTarget(ProfileeViewController.self, action: #selector(buttonAction), for: .touchUpInside)
-        return myButton
-    }()
-    @objc func buttonAction(){}
+    private func setupTableView(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+    }
     
-    func setupLayout() {
-        let saveAreaGuide = view.safeAreaLayoutGuide
+    private func setupUI(){
+        view.addSubview(tableView)
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(profileHeaderView)
-        profileHeaderView.addSubview(buttonPress)
+        
         NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            
             profileHeaderView.topAnchor.constraint(equalTo: view.topAnchor),
             profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            buttonPress.topAnchor.constraint(equalTo: view.topAnchor),
-            buttonPress.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            buttonPress.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            buttonPress.bottomAnchor.constraint(equalTo: saveAreaGuide.bottomAnchor)
+        
         ])
     }
 
 }
 
 
+extension ProfileeViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.id, for: indexPath) as? PostTableViewCell else {return UITableViewCell()}
+        let post = dataSource [indexPath.row]
+        cell.configure(with: post)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let profileHeaderView = ProfileHeaderView()
+        return profileHeaderView
+        }
+}

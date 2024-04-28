@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import StorageService
+
 
 class FeedViewController: UIViewController {
-    var post = Post(title: "Мой пост")
+     
+    //var post = Post(title: "Мой пост")
     
    
 
@@ -55,9 +58,7 @@ class FeedViewController: UIViewController {
         navigationController?.pushViewController(postViewController, animated: true)
         
         }
-    struct Post {
-        var title: String
-    }
+   
     
     func setupConstrait(){
         let saveAreaGuide = view.safeAreaLayoutGuide

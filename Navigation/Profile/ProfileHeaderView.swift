@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
+
+
 class ProfileHeaderView: UIView {
     
-   //let profileHeaderView = ProfileHeaderView()
-    
     let textField: UITextField = {
-       let textField = UITextField()
+        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.addTarget(ProfileHeaderView.self, action: #selector(statusTextChanged), for: .editingChanged)
         textField.layer.cornerRadius = 12
@@ -27,7 +27,7 @@ class ProfileHeaderView: UIView {
     }()
     
     lazy var actioButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Button", for: .normal)
         button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
@@ -39,7 +39,7 @@ class ProfileHeaderView: UIView {
         button.layer.shadowColor = UIColor.systemBlue.cgColor
         button.layer.masksToBounds = false
         return button
-        }()
+    }()
     let nameLabel :UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -67,10 +67,10 @@ class ProfileHeaderView: UIView {
         return catView
     }()
     
-   override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayout()
         backgroundColor = .orange
+        setupLayout()
     }
     required init?(coder: NSLayoutConstraint) {
         super.init(frame: CGRect())
@@ -79,24 +79,25 @@ class ProfileHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     @objc func statusTextChanged(_ textField: UITextField) {
         
     }
     
     @objc func buttonTap() {
-       print("Статус")
+        print("Статус")
     }
-   func setupLayout(){
-       addSubview(actioButton)
-       addSubview(nameLabel)
-       addSubview(catView)
-       addSubview(statusLabel)
-       addSubview(textField)
+    func setupLayout(){
+        addSubview(actioButton)
+        addSubview(nameLabel)
+        addSubview(catView)
+        addSubview(statusLabel)
+        addSubview(textField)
+        
        
-       //let saveAreaGuide =  profileHeaderView.safeAreaLayoutGuide
-       
-       
-       NSLayoutConstraint.activate([
+        
+        
+        NSLayoutConstraint.activate([
             actioButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 16),
             actioButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             actioButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -122,11 +123,10 @@ class ProfileHeaderView: UIView {
             textField.leadingAnchor.constraint(equalTo: catView.trailingAnchor, constant: 16),
             textField.heightAnchor.constraint(equalToConstant: 40),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
-        
+            
         ])
+        
     }
-}
-
-
     
-
+    
+}
