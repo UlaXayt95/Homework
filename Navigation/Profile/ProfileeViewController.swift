@@ -4,18 +4,16 @@
 //
 //  Created by Улугбек Хайтметов on 29.01.2024.
 //
-import Foundation
+
 import UIKit
 
-struct Post {
-    var author: String
-    var description: String
-    var image: String
-    var likes: Int
-    var views: Int
+public struct Post {
+    internal var author: String
+    internal var description: String
+    internal var image: String
+    internal var likes: Int
+    internal var views: Int
 }
-
-
 
 class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
   
@@ -60,20 +58,13 @@ class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private func setupUI(){
         view.addSubview(tableView)
-        profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(profileHeaderView)
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            
-            profileHeaderView.topAnchor.constraint(equalTo: view.topAnchor),
-            profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        
         ])
     }
 

@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 final class PostTableViewCell: UITableViewCell {
     
     
@@ -17,12 +18,13 @@ final class PostTableViewCell: UITableViewCell {
         
         let photo = UIImageView()
         photo.translatesAutoresizingMaskIntoConstraints = false
+        
         return photo
     }()
     private let author: UILabel = {
         let author = UILabel()
         author.translatesAutoresizingMaskIntoConstraints = false
-        author.backgroundColor = .black
+        author.textColor = .black
         author.contentMode = .scaleAspectFit
         return author
     }()
@@ -65,21 +67,29 @@ final class PostTableViewCell: UITableViewCell {
         
         
         NSLayoutConstraint.activate([
-            author.topAnchor.constraint(equalTo: topAnchor),
+            author.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             author.leadingAnchor.constraint(equalTo: leadingAnchor),
             author.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            descrip.topAnchor.constraint(equalTo: author.bottomAnchor, constant: -16),
+            photoView.topAnchor.constraint(equalTo: author.bottomAnchor),
+            photoView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            photoView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            photoView.bottomAnchor.constraint(equalTo: descrip.topAnchor),
+            
+            descrip.topAnchor.constraint(equalTo: photoView.bottomAnchor, constant: 16),
             descrip.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             
-            like.topAnchor.constraint(equalTo: descrip.bottomAnchor, constant: -16),
+            like.topAnchor.constraint(equalTo: descrip.bottomAnchor, constant: 16),
             like.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            //like.bottomAnchor.constraint(equalTo: author.topAnchor),
             
-            views.topAnchor.constraint(equalTo: descrip.bottomAnchor, constant: -16),
-            views.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            views.topAnchor.constraint(equalTo: descrip.bottomAnchor, constant: 16),
+            views.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
+            //views.bottomAnchor.constraint(equalTo: author.topAnchor),
             
         ])
     }
+    
     func configure(with post: Post) {
         let postImage = UIImage(named: post.image)
         photoView.image = postImage
