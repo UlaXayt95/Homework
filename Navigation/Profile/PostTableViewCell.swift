@@ -6,40 +6,41 @@
 //
 
 import UIKit
+import StorageService
 
 
-final class PostTableViewCell: UITableViewCell {
+final public class PostTableViewCell: UITableViewCell {
     
     
     
     static let id = "PostTableViewCell"
     
-    private let photoView: UIImageView = {
+    let photoView: UIImageView = {
         
         let photo = UIImageView()
         photo.translatesAutoresizingMaskIntoConstraints = false
         
         return photo
     }()
-    private let author: UILabel = {
+    let author: UILabel = {
         let author = UILabel()
         author.translatesAutoresizingMaskIntoConstraints = false
         author.textColor = .black
         author.contentMode = .scaleAspectFit
         return author
     }()
-    private let descrip: UILabel = {
+    let descrip: UILabel = {
         let description = UILabel()
         description.translatesAutoresizingMaskIntoConstraints = false
         return description
     }()
-    private let like: UILabel = {
+    let like: UILabel = {
         let like = UILabel()
         like.translatesAutoresizingMaskIntoConstraints = false
         like.textColor = .black
         return like
     }()
-    private let views: UILabel = {
+    let views: UILabel = {
         let views = UILabel()
         views.translatesAutoresizingMaskIntoConstraints = false
         return views

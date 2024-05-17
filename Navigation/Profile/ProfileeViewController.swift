@@ -6,21 +6,14 @@
 //
 
 import UIKit
-
-public struct Post {
-    internal var author: String
-    internal var description: String
-    internal var image: String
-    internal var likes: Int
-    internal var views: Int
-}
+import StorageService
 
 class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
   
     
     let profileHeaderView = ProfileHeaderView()
     let appearance = UINavigationBarAppearance()
-    private var dataSource: [Post] = [
+    var dataSource: [Post] = [
         Post(author: "Superman", description: "Man of Steel", image: "superman", likes: 4556, views: 8855),
         Post(author: "Naruto", description: "Hokage", image: "naruto", likes: 6473, views: 8696),
         Post(author: "Kurasaki Ichigo", description: "Shinigami", image:"Ichigo", likes: 8696, views: 9000),
