@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import StorageService
 
 
 final public class PostTableViewCell: UITableViewCell {

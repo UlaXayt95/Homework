@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import StorageService
 
 public struct Post {
     public var author: String
@@ -89,6 +88,6 @@ extension ProfileeViewController: UITableViewDelegate, UITableViewDataSource{
         return profileHeaderView
         }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 250 
+            return 250
         }
 }
