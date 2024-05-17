@@ -21,6 +21,7 @@
 		A296F77C2BA7105600E3808C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A296F77B2BA7105600E3808C /* LogInViewController.swift */; };
 		A296F7802BB4D8EB00E3808C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A296F77F2BB4D8EB00E3808C /* PostTableViewCell.swift */; };
 		A2C31A612BEEB15400B946C2 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C31A602BEEB15400B946C2 /* PhotosTableViewCell.swift */; };
+		A2C31A6B2BF8061800B946C2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C31A6A2BF8061700B946C2 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		A2C31A602BEEB15400B946C2 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		A2C31A642BF370B300B946C2 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Navigation.app; path = "/Users/ulugbekhajtmetov/Downloads/KhaytmetovIOS40_HW4_1/build/Debug-iphoneos/Navigation.app"; sourceTree = "<absolute>"; };
 		A2C31A692BF7F0D800B946C2 /* StorageServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = StorageServiceTests.xctest; path = "/Users/ulugbekhajtmetov/Downloads/KhaytmetovIOS40_HW4_1/build/Debug-iphoneos/StorageServiceTests.xctest"; sourceTree = "<absolute>"; };
+		A2C31A6A2BF8061700B946C2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				A263DA722B67E9CE00345065 /* ProfileeViewController.swift */,
 				A296F77B2BA7105600E3808C /* LogInViewController.swift */,
 				A296F77F2BB4D8EB00E3808C /* PostTableViewCell.swift */,
+				A2C31A6A2BF8061700B946C2 /* Post.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				A296F7802BB4D8EB00E3808C /* PostTableViewCell.swift in Sources */,
 				A24E9CE52B4E0750007EC542 /* PostViewController.swift in Sources */,
 				A24E9CD12B4AA6DC007EC542 /* ViewController.swift in Sources */,
+				A2C31A6B2BF8061800B946C2 /* Post.swift in Sources */,
 				A24E9CCD2B4AA6DC007EC542 /* AppDelegate.swift in Sources */,
 				A24E9CE92B548851007EC542 /* InfoViewController.swift in Sources */,
 				A24E9CE32B4B2101007EC542 /* ProfileViewController.swift in Sources */,

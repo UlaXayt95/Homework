@@ -7,13 +7,6 @@
 
 import UIKit
 
-public struct Post {
-    public var author: String
-    public var description: String
-    public var image: String
-    public var likes: Int
-    public var views: Int
-}
 
 class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
   
