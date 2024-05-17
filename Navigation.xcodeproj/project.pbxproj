@@ -97,7 +97,7 @@
 		A2C31A602BEEB15400B946C2 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		A2C31A622BF370B300B946C2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A2C31A642BF370B300B946C2 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2C31A652BF370B300B946C2 /* StorageServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorageServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2C31A652BF370B300B946C2 /* StorageServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = StorageServiceTests.xctest; path = "/Users/ulugbekhajtmetov/Downloads/KhaytmetovIOS40_HW4_1/build/Debug-iphoneos/StorageServiceTests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,6 @@
 				A296F7952BC6997900E3808C /* StorageServiceTests */,
 				A2C31A532BDEEACF00B946C2 /* StorageService.framework */,
 				A2C31A642BF370B300B946C2 /* Navigation.app */,
-				A2C31A652BF370B300B946C2 /* StorageServiceTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};

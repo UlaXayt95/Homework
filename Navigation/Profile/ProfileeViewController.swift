@@ -8,6 +8,14 @@
 import UIKit
 import StorageService
 
+public struct Post {
+    public var author: String
+    public var description: String
+    public var image: String
+    public var likes: Int
+    public var views: Int
+}
+
 class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
   
     
@@ -79,5 +87,8 @@ extension ProfileeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let profileHeaderView = ProfileHeaderView()
         return profileHeaderView
+        }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 250 
         }
 }
