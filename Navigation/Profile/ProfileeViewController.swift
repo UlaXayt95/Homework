@@ -13,22 +13,21 @@ class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     let profileHeaderView = ProfileHeaderView()
     let appearance = UINavigationBarAppearance()
-    var dataSource: [Post] = [
-        Post(author: "Superman", description: "Man of Steel", image: "superman", likes: 4556, views: 8855),
-        Post(author: "Naruto", description: "Hokage", image: "naruto", likes: 6473, views: 8696),
-        Post(author: "Kurasaki Ichigo", description: "Shinigami", image:"Ichigo", likes: 8696, views: 9000),
-        Post(author: "Monkey D. Luffy", description: "The Sun God", image:"luffy", likes: 6575, views: 7654)
-    ]
+    var dataSource = Post.make()
     
-    let tableView: UITableView = .init()
+    private var tableView: UITableView = {
+            let tableView = UITableView.init(
+                frame: .zero,
+                style: .grouped
+            )
+            return tableView
+        } ()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //appearance.backgroundColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
-        //view.backgroundColor = .white
         title = "Profile"
         
         #if DEBUG
@@ -36,34 +35,61 @@ class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
         #else
         self.view.backgroundColor = .systemCyan
         #endif
-        
-     
+        setup()
+        tuneTableView()
         setupUI()
-        setupTableView()
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostTableViewCell")
+        self.tableView.rowHeight = UITableView.automaticDimension
+        setupConstraint()
     }
     
-    private func setupTableView(){
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+    
+    
+    
+    private func setup(){
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Profile"
+        view.backgroundColor = .white
     }
     
     private func setupUI(){
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+    }
+    
+    private func setupConstraint(){
+        let safeAreaGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor),
         ])
     }
+    private func tuneTableView() {
+         tableView.tableFooterView = UIView()
+         tableView.rowHeight = UITableView.automaticDimension
+         tableView.estimatedRowHeight = 150
+        
+        let headerView = ProfileHeaderView()
+        tableView.setAndLayout(headerView: headerView)
+        tableView.tableFooterView = UIView()
+         
+         if #available(iOS 15.0, *) {
+             tableView.sectionHeaderTopPadding = 0.0
+         }
+      
+         
+         tableView.dataSource = self
+         tableView.delegate = self
+     }
+ }
 
-}
 
 
+    
+    
 extension ProfileeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dataSource.count
@@ -76,11 +102,13 @@ extension ProfileeViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let profileHeaderView = ProfileHeaderView()
         return profileHeaderView
-        }
+    }*/
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 250
-        }
+        return 450
+    }
+    
+    
 }

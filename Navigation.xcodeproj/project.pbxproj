@@ -22,30 +22,10 @@
 		A296F7802BB4D8EB00E3808C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A296F77F2BB4D8EB00E3808C /* PostTableViewCell.swift */; };
 		A2C31A612BEEB15400B946C2 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C31A602BEEB15400B946C2 /* PhotosTableViewCell.swift */; };
 		A2C31A6B2BF8061800B946C2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C31A6A2BF8061700B946C2 /* Post.swift */; };
+		A2D157F72C1CB11200EEF835 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D157F62C1CB11200EEF835 /* UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A296F7912BC6997900E3808C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A24E9CC12B4AA6DC007EC542 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A296F7852BC6997900E3808C;
-			remoteInfo = StorageService;
-		};
-		A296F7932BC6997900E3808C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A24E9CC12B4AA6DC007EC542 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A24E9CC82B4AA6DC007EC542;
-			remoteInfo = Navigation;
-		};
-		A296F7992BC6997A00E3808C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A24E9CC12B4AA6DC007EC542 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A296F7852BC6997900E3808C;
-			remoteInfo = StorageService;
-		};
 		A2C31A5B2BE4082D00B946C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A24E9CC12B4AA6DC007EC542 /* Project object */;
@@ -83,29 +63,14 @@
 		A263DA722B67E9CE00345065 /* ProfileeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileeViewController.swift; sourceTree = "<group>"; };
 		A296F77B2BA7105600E3808C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		A296F77F2BB4D8EB00E3808C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
-		A2C31A532BDEEACF00B946C2 /* StorageService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StorageService.framework; path = "/Users/ulugbekhajtmetov/Downloads/KhaytmetovIOS40_HW4_1/build/Debug-iphoneos/StorageService.framework"; sourceTree = "<absolute>"; };
 		A2C31A602BEEB15400B946C2 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
-		A2C31A642BF370B300B946C2 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Navigation.app; path = "/Users/ulugbekhajtmetov/Downloads/KhaytmetovIOS40_HW4_1/build/Debug-iphoneos/Navigation.app"; sourceTree = "<absolute>"; };
-		A2C31A692BF7F0D800B946C2 /* StorageServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = StorageServiceTests.xctest; path = "/Users/ulugbekhajtmetov/Downloads/KhaytmetovIOS40_HW4_1/build/Debug-iphoneos/StorageServiceTests.xctest"; sourceTree = "<absolute>"; };
 		A2C31A6A2BF8061700B946C2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A2D157F52C13229E00EEF835 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2D157F62C1CB11200EEF835 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A24E9CC62B4AA6DC007EC542 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A296F7832BC6997900E3808C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A296F78C2BC6997900E3808C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				A24E9CCB2B4AA6DC007EC542 /* Navigation */,
+				A2D157F52C13229E00EEF835 /* Navigation.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +115,7 @@
 				A296F77B2BA7105600E3808C /* LogInViewController.swift */,
 				A296F77F2BB4D8EB00E3808C /* PostTableViewCell.swift */,
 				A2C31A6A2BF8061700B946C2 /* Post.swift */,
+				A2D157F62C1CB11200EEF835 /* UITableView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -163,16 +130,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		A296F7812BC6997900E3808C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		A24E9CC82B4AA6DC007EC542 /* Navigation */ = {
 			isa = PBXNativeTarget;
@@ -186,50 +143,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				A296F79A2BC6997A00E3808C /* PBXTargetDependency */,
 				A2C31A5C2BE4082D00B946C2 /* PBXTargetDependency */,
 			);
 			name = Navigation;
 			productName = Navigation;
-			productReference = A2C31A642BF370B300B946C2 /* Navigation.app */;
+			productReference = A2D157F52C13229E00EEF835 /* Navigation.app */;
 			productType = "com.apple.product-type.application";
-		};
-		A296F7852BC6997900E3808C /* StorageService */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A296F79D2BC6997A00E3808C /* Build configuration list for PBXNativeTarget "StorageService" */;
-			buildPhases = (
-				A296F7812BC6997900E3808C /* Headers */,
-				A296F7822BC6997900E3808C /* Sources */,
-				A296F7832BC6997900E3808C /* Frameworks */,
-				A296F7842BC6997900E3808C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = StorageService;
-			productName = StorageService;
-			productReference = A2C31A532BDEEACF00B946C2 /* StorageService.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A296F78E2BC6997900E3808C /* StorageServiceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A296F7A12BC6997A00E3808C /* Build configuration list for PBXNativeTarget "StorageServiceTests" */;
-			buildPhases = (
-				A296F78B2BC6997900E3808C /* Sources */,
-				A296F78C2BC6997900E3808C /* Frameworks */,
-				A296F78D2BC6997900E3808C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A296F7922BC6997900E3808C /* PBXTargetDependency */,
-				A296F7942BC6997900E3808C /* PBXTargetDependency */,
-			);
-			name = StorageServiceTests;
-			productName = StorageServiceTests;
-			productReference = A2C31A692BF7F0D800B946C2 /* StorageServiceTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -243,13 +162,6 @@
 				TargetAttributes = {
 					A24E9CC82B4AA6DC007EC542 = {
 						CreatedOnToolsVersion = 14.3.1;
-					};
-					A296F7852BC6997900E3808C = {
-						CreatedOnToolsVersion = 15.2;
-					};
-					A296F78E2BC6997900E3808C = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = A24E9CC82B4AA6DC007EC542;
 					};
 				};
 			};
@@ -267,8 +179,6 @@
 			projectRoot = "";
 			targets = (
 				A24E9CC82B4AA6DC007EC542 /* Navigation */,
-				A296F7852BC6997900E3808C /* StorageService */,
-				A296F78E2BC6997900E3808C /* StorageServiceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,20 +190,6 @@
 			files = (
 				A24E9CD92B4AA6DD007EC542 /* LaunchScreen.storyboard in Resources */,
 				A24E9CD62B4AA6DD007EC542 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A296F7842BC6997900E3808C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A296F78D2BC6997900E3808C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,44 +213,15 @@
 				A263DA732B67E9CE00345065 /* ProfileeViewController.swift in Sources */,
 				A296F77C2BA7105600E3808C /* LogInViewController.swift in Sources */,
 				A263DA6D2B67E88C00345065 /* ProfileHeaderView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A296F7822BC6997900E3808C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A296F78B2BC6997900E3808C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A2D157F72C1CB11200EEF835 /* UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A296F7922BC6997900E3808C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A296F7852BC6997900E3808C /* StorageService */;
-			targetProxy = A296F7912BC6997900E3808C /* PBXContainerItemProxy */;
-		};
-		A296F7942BC6997900E3808C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A24E9CC82B4AA6DC007EC542 /* Navigation */;
-			targetProxy = A296F7932BC6997900E3808C /* PBXContainerItemProxy */;
-		};
-		A296F79A2BC6997A00E3808C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A296F7852BC6997900E3808C /* StorageService */;
-			targetProxy = A296F7992BC6997A00E3808C /* PBXContainerItemProxy */;
-		};
 		A2C31A5C2BE4082D00B946C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A296F7852BC6997900E3808C /* StorageService */;
 			targetProxy = A2C31A5B2BE4082D00B946C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -549,134 +416,6 @@
 			};
 			name = Release;
 		};
-		A296F79E2BC6997A00E3808C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.exercise.first.StorageService;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A296F79F2BC6997A00E3808C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.exercise.first.StorageService;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A296F7A22BC6997A00E3808C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.exercise.first.StorageServiceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Navigation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Navigation";
-			};
-			name = Debug;
-		};
-		A296F7A32BC6997A00E3808C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.exercise.first.StorageServiceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Navigation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Navigation";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -694,24 +433,6 @@
 			buildConfigurations = (
 				A24E9CDE2B4AA6DD007EC542 /* Debug */,
 				A24E9CDF2B4AA6DD007EC542 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A296F79D2BC6997A00E3808C /* Build configuration list for PBXNativeTarget "StorageService" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A296F79E2BC6997A00E3808C /* Debug */,
-				A296F79F2BC6997A00E3808C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A296F7A12BC6997A00E3808C /* Build configuration list for PBXNativeTarget "StorageServiceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A296F7A22BC6997A00E3808C /* Debug */,
-				A296F7A32BC6997A00E3808C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

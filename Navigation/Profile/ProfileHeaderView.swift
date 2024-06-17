@@ -12,6 +12,8 @@ import UIKit
 
 class ProfileHeaderView: UIView {
     
+   
+    
     let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
