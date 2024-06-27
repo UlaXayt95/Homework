@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct Profile {
+    let photo: String
+}
+
+extension Profile {
+    static func make() -> [Profile]{[
+        Profile(photo: "1"),
+        Profile(photo: "2"),
+        Profile(photo: "3"),
+        Profile(photo: "4")
+    ]}
+}

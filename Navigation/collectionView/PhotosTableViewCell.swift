@@ -10,83 +10,148 @@ import UIKit
 
 class PhotosTableViewCell: UITableViewCell {
     
-    private lazy var photos: UILabel = {
-        let photos = UILabel()
-        photos.textColor = .black
-        return photos
-    }()
-    
-    
-    private lazy var imageView0: UIImageView = {
-        let image = UIImageView(frame: .zero)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 6
-        image.clipsToBounds = true
-        return image
-    }()
-    
-    private lazy var imageView1: UIImageView = {
-        let image = UIImageView(frame: .zero)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 6
-        image.clipsToBounds = true
-        return image
-    }()
-    
-    private lazy var imageView2: UIImageView = {
-        let image = UIImageView(frame: .zero)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 6
-        image.clipsToBounds = true
-        return image
-    }()
-    
-    private lazy var imageView3: UIImageView = {
-        let image = UIImageView(frame: .zero)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 6
-        image.clipsToBounds = true
-        return image
-    }()
-    
-    required init?(coder: NSCoder) {
-        fatalError("init?(coder:) has not been implemented")
-    }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-    }
-    
-    func setup(){
-        addSubview(imageView0)
-        addSubview(imageView1)
-        addSubview(imageView2)
-        addSubview(imageView3)
+    private let photoTitle: UILabel = {
+            let label = UILabel()
+            label.text = "Photos"
+            label.textColor = .black
+            label.font = UIFont.systemFont(
+                ofSize: 24,
+                weight: .bold
+            )
+            return label
+        } ()
         
-        NSLayoutConstraint.activate([
-            imageView0.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            imageView0.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            imageView0.trailingAnchor.constraint(equalTo: imageView1.leadingAnchor, constant: 8),
-            imageView0.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 12),
-            
-            imageView1.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            imageView1.leadingAnchor.constraint(equalTo: imageView0.trailingAnchor, constant: 8),
-            imageView1.trailingAnchor.constraint(equalTo: imageView2.leadingAnchor, constant: 8),
-            imageView1.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 12),
-            
-            imageView2.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            imageView2.leadingAnchor.constraint(equalTo: imageView1.trailingAnchor, constant: 8),
-            imageView2.trailingAnchor.constraint(equalTo: imageView3.leadingAnchor, constant: 8),
-            imageView2.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 12),
-            
-            imageView3.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            imageView3.leadingAnchor.constraint(equalTo: imageView2.trailingAnchor, constant: 8),
-            imageView3.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 12),
-            imageView3.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 12),
-            
-            
+        private let openPhotosButton: UIButton = {
+            let button = UIButton()
+            button.setImage(
+                UIImage(systemName: "arrow.right"),
+                for: .normal
+            )
+            button.tintColor = .black
+            return button
+        } ()
         
-        ])
+    private let photoCollection: UICollectionView = {
+            let viewLayout = UICollectionViewFlowLayout()
+            viewLayout.scrollDirection = .horizontal
+            let collectionView = UICollectionView(
+                frame: .zero,
+                collectionViewLayout: viewLayout
+            )
+            
+            return collectionView
+        } ()
+        
+        override init(
+            style: UITableViewCell.CellStyle,
+            reuseIdentifier: String?
+        ) {
+            super.init(
+                style: style,
+                reuseIdentifier: reuseIdentifier
+            )
+            addSubviews()
+            makeLayout()
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        private func addSubviews() {
+            [photoTitle,
+             openPhotosButton,
+             photoCollection].forEach() {
+                ($0).translatesAutoresizingMaskIntoConstraints = false
+                contentView.addSubview($0)
+            }
+        }
+        
+        private func makeLayout() {
+            NSLayoutConstraint.activate([
+                photoTitle.topAnchor.constraint(
+                    equalTo: contentView.topAnchor,
+                    constant: 12
+                ),
+                photoTitle.leadingAnchor.constraint(
+                    equalTo: contentView.leadingAnchor,
+                    constant: 12
+                ),
+                
+                
+                openPhotosButton.centerYAnchor.constraint(
+                    equalTo: photoTitle.centerYAnchor
+                ),
+                openPhotosButton.trailingAnchor.constraint(
+                    equalTo: contentView.trailingAnchor,
+                    constant: -12
+                ),
+                openPhotosButton.heightAnchor.constraint(
+                    equalTo: photoTitle.heightAnchor
+                ),
+                openPhotosButton.widthAnchor.constraint(
+                    equalTo: photoTitle.heightAnchor
+                ),
+                
+                
+                photoCollection.topAnchor.constraint(
+                    equalTo: photoTitle.bottomAnchor,
+                    constant: 12
+                ),
+                photoCollection.leadingAnchor.constraint(
+                    equalTo: photoTitle.leadingAnchor
+                ),
+                photoCollection.trailingAnchor.constraint(
+                    equalTo: openPhotosButton.trailingAnchor
+                ),
+                photoCollection.bottomAnchor.constraint(
+                    equalTo: contentView.bottomAnchor,
+                    constant: -12
+                ),
+                photoCollection.heightAnchor.constraint(
+                    equalToConstant: 60
+                )
+            ])
+        }
+        
     }
-}
+
+
+   
+
+    extension PhotosTableViewCell: UICollectionViewDelegateFlowLayout {
+        
+        private enum LayoutConstant {
+            static let numberOfItemsInRow: CGFloat = 4
+            static let spaceSize: CGFloat = 8
+        }
+        
+        private func itemWidth(
+            for width: CGFloat,
+            spacing: CGFloat
+        ) -> CGFloat {
+            let itemsInRow: CGFloat = LayoutConstant.numberOfItemsInRow
+            let totalSpacing: CGFloat = (itemsInRow + 2) * spacing
+            let finalWidth = (width - totalSpacing) / itemsInRow
+            
+            return floor(finalWidth)
+        }
+        
+        func collectionView(
+            _ collectionView: UICollectionView,
+            layout collectionViewLayout: UICollectionViewLayout,
+            sizeForItemAt indexPath: IndexPath
+        ) -> CGSize {
+            let width = itemWidth(
+                for: contentView.frame.width,
+                spacing: LayoutConstant.spaceSize
+            )
+            let height = width
+            
+            return CGSize(
+                width: width,
+                height: height
+            )
+        }
+    }
+
