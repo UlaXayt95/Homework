@@ -7,6 +7,7 @@
 
 import UIKit
 import StorageService
+import iOSIntPackage
 
 
 final public class PostTableViewCell: UITableViewCell {
@@ -53,6 +54,8 @@ final public class PostTableViewCell: UITableViewCell {
         views.translatesAutoresizingMaskIntoConstraints = false
         return views
     }()
+    
+    
     
     
     
