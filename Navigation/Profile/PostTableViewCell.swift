@@ -62,13 +62,21 @@ final public class PostTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var image12 = UIImage(named: "image12")
+   
     
+    /*func imageChange(){
+        let method = ImageProcessor()
+        method.processImage(
+            sourceImage: .checkmark ,
+            filter:.bloom(intensity: 2.0), completion: (UIImage?) -> Void)}*/
     
     private func setupUI() {
         addSubview(like)

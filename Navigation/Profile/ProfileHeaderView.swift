@@ -5,8 +5,9 @@
 //  Created by Улугбек Хайтметов on 29.01.2024.
 //
 
-import Foundation
+import SnapKit
 import UIKit
+
 
 
 
@@ -69,11 +70,18 @@ class ProfileHeaderView: UIView {
         return catView
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .orange
+        backgroundColor = .white
         setupLayout()
+        catView.snp.makeConstraints { (make) -> Void in
+                make.width.height.equalTo(120)}
+        
+    
     }
+        
+        
     required init?(coder: NSLayoutConstraint) {
         super.init(frame: CGRect())
     }

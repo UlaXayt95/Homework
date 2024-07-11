@@ -27,6 +27,8 @@ class ProfileeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.standardAppearance = appearance
