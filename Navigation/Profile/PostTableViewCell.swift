@@ -68,15 +68,15 @@ final public class PostTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    func meth2(completion:UIImage?){
+    }
+    func meth (){
+        let originalImage = UIImage(named: "image12") ?? UIImage()
+        let meth = ImageProcessor()
+        meth.processImage(sourceImage: originalImage, filter: .bloom(intensity: 0.5)){_ in }
+    }
     
-    var image12 = UIImage(named: "image12")
-   
     
-    /*func imageChange(){
-        let method = ImageProcessor()
-        method.processImage(
-            sourceImage: .checkmark ,
-            filter:.bloom(intensity: 2.0), completion: (UIImage?) -> Void)}*/
     
     private func setupUI() {
         addSubview(like)
