@@ -62,18 +62,19 @@ final public class PostTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        meth()
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func meth2(completion:UIImage?){
-    }
+    
     func meth (){
         let originalImage = UIImage(named: "image12") ?? UIImage()
         let meth = ImageProcessor()
-        meth.processImage(sourceImage: originalImage, filter: .bloom(intensity: 0.5)){_ in }
+        meth.processImage(sourceImage: originalImage, filter: .bloom(intensity: 0.5)){filtered in
+            photoView.image = filtered}
     }
     
     
