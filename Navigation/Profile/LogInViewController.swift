@@ -14,9 +14,10 @@ class LogInViewController: UIViewController {
         let navigationBar = UINavigationBar()
         navigationBar.isHidden = true
         view.backgroundColor = .white
-        
         setConstraints()
     }
+    
+    
  
     lazy var scrollView: UIScrollView = {
             let scrollView = UIScrollView()
@@ -56,6 +57,7 @@ class LogInViewController: UIViewController {
         textViewVK.isSecureTextEntry = true
         return textViewVK
     }()
+    
     
     let textViewVK2: UITextField = {
         let textViewVK = UITextField()

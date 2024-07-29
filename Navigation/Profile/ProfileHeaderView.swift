@@ -43,23 +43,19 @@ class ProfileHeaderView: UIView {
         button.layer.masksToBounds = false
         return button
     }()
-    let nameLabel :UILabel = {
-        let label = UILabel()
+    let nameLabel :User = {
+        let label = User()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Dirty Lebedev"
-        label.textColor = .black
         return label
     }()
-    let statusLabel: UILabel = {
-        let text = UILabel()
+    let statusLabel: User = {
+        let text = User()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.textColor = .gray
-        text.text = "Waitinig for Lebedev"
         return text
     }()
-    let catView:UIImageView = {
-        let image = UIImage(named: "lebedev")
-        let catView = UIImageView(image: image)
+    let catView: User = {
+        let photo = UIImage(named: "lebedev")
+        let catView = User()
         catView.translatesAutoresizingMaskIntoConstraints = false
         catView.layer.masksToBounds = true
         catView.layer.contentsGravity = .resizeAspect
@@ -67,6 +63,7 @@ class ProfileHeaderView: UIView {
         catView.layer.borderColor = UIColor.white.cgColor
         catView.layer.borderWidth = 3.0
         catView.clipsToBounds = true
+        catView.image = photo ?? UIImage()
         return catView
     }()
     
@@ -77,6 +74,7 @@ class ProfileHeaderView: UIView {
         setupLayout()
         catView.snp.makeConstraints { (make) -> Void in
                 make.width.height.equalTo(120)}
+        
         
     
     }
